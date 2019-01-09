@@ -13,6 +13,8 @@
 	By default, the username is <code>root</code> and you can leave the password field empty. <strong>(This is for Xampp)</strong> <br>
 	By default, the username is <code>root</code> and password is also <code>root</code>. <strong>(This is for Lamp)</strong></li>
 	<li>Run <code>php artisan key:generate</code></li>
+	<h4><i>Do on every PULL request!</i></h4>
+	<li>Run <code>composer update</code></li>
 	<h4><i>Next, is only if you have a database with entries!</i></h4>
 	<li>Run <code>php artisan migrate</code></li>
 	<h4><i>Lunch Laravel server!</i></h4>
