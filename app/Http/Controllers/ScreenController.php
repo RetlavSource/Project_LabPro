@@ -8,10 +8,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Console;
+use App\Screen;
 use Illuminate\Http\Request;
 
-class ConsolesController extends Controller
+class ScreenController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -47,10 +47,10 @@ class ConsolesController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Console  $console
+     * @param  \App\Screen  $screen
      * @return \Illuminate\Http\Response
      */
-    public function show(Console $console)
+    public function show(Screen $screen)
     {
         //
     }
@@ -58,10 +58,10 @@ class ConsolesController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Console  $console
+     * @param  \App\Screen  $screen
      * @return \Illuminate\Http\Response
      */
-    public function edit(Console $console)
+    public function edit(Screen $screen)
     {
         //
     }
@@ -70,10 +70,10 @@ class ConsolesController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Console  $console
+     * @param  \App\Screen  $screen
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Console $console)
+    public function update(Request $request, Screen $screen)
     {
         //
     }
@@ -81,10 +81,10 @@ class ConsolesController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Console  $console
+     * @param  \App\Screen  $screen
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Console $console)
+    public function destroy(Screen $screen)
     {
         //
     }

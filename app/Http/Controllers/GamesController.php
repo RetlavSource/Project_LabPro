@@ -1,5 +1,11 @@
 <?php
 
+/**
+ * Identificação dos autores:
+ * Valter Cardoso   - nº31062
+ * Gustavo Teixeira - nº21736
+ */
+
 namespace App\Http\Controllers;
 
 use App\Game;

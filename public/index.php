@@ -1,4 +1,10 @@
 <?php
+/**
+ * Identificação dos autores:
+ * Valter Cardoso   - nº31062
+ * Gustavo Teixeira - nº21736
+ */
+
 
 /**
  * Laravel - A PHP Framework For Web Artisans

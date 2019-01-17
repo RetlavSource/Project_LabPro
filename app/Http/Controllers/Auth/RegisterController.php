@@ -1,5 +1,11 @@
 <?php
 
+/**
+ * Identificação dos autores:
+ * Valter Cardoso   - nº31062
+ * Gustavo Teixeira - nº21736
+ */
+
 namespace App\Http\Controllers\Auth;
 
 use App\User;
@@ -50,6 +56,11 @@ class RegisterController extends Controller
     {
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
+            'lastname' => ['required', 'string', 'max:255'],
+            'nickname' => ['required', 'string', 'max:255'],
+            'bourn_date' => ['required'],
+            'address' => ['required', 'string', 'max:255'],
+            'mobile' => ['required', 'integer'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:6', 'confirmed'],
         ]);
@@ -65,6 +76,11 @@ class RegisterController extends Controller
     {
         return User::create([
             'name' => $data['name'],
+            'lastname' => $data['lastname'],
+            'nickname' => $data['nickname'],
+            'bourn_date' => $data['bourn_date'],
+            'address' => $data['address'],
+            'mobile' => $data['mobile'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);

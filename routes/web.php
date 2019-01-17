@@ -1,5 +1,11 @@
 <?php
 
+/**
+ * Identificação dos autores:
+ * Valter Cardoso   - nº31062
+ * Gustavo Teixeira - nº21736
+ */
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,3 +20,7 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

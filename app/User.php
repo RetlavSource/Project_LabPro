@@ -1,5 +1,11 @@
 <?php
 
+/**
+ * Identificação dos autores:
+ * Valter Cardoso   - nº31062
+ * Gustavo Teixeira - nº21736
+ */
+
 namespace App;
 
 use Illuminate\Notifications\Notifiable;
@@ -16,7 +22,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'lastname', 'nickname', 'bourn_date', 'address', 'mobile', 'email', 'password',
     ];
 
     /**

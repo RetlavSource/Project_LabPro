@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateConsolesTable extends Migration
+class CreateScreensTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,13 @@ class CreateConsolesTable extends Migration
      */
     public function up()
     {
-        Schema::create('consoles', function (Blueprint $table) {
+        Schema::create('screens', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
-            $table->string('tag');
+            $table->string('screen_path');
+            $table->unsignedInteger('game_id');
             $table->timestamps();
+
+            $table->foreign('game_id')->references('id')->on('games');
         });
     }
 
@@ -28,6 +30,6 @@ class CreateConsolesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('consoles');
+        Schema::dropIfExists('screens');
     }
 }
