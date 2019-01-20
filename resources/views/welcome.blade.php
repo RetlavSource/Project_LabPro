@@ -6,7 +6,7 @@
  
  @extends('layouts.app')
 
- @section('content')
+ @section('center')
  
 <div style="background-color: #FFFFCD;
             color: #636b6f;

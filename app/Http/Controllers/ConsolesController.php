@@ -30,7 +30,7 @@ class ConsolesController extends Controller
      */
     public function create()
     {
-        //
+        return view('consoles.create');
     }
 
     /**

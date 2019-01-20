@@ -9,7 +9,8 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    {{-- <title>{{ config('app.name', 'Laravel') }}</title> --}}
+    <title>@yield('title', "Game O'Club")</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -177,18 +178,64 @@
 
         <!-- END Carousel Slideshow -->
 
+        <!-- START Navbar -->
+
+        <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #F7D358">
+            <a class="navbar-brand" href="#">
+                <img src="/logo/icon2.png" class="img-fluid" alt="Responsive image" width="30">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item @isset($nav_all) {{ $nav_all }} @endisset">
+                        <a class="nav-link" href="#">
+                            <img src="/console_logo/all.png" class="img-fluid" alt="Responsive image" width="80">
+                        <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item @isset($nav_ps4) {{ $nav_ps4 }} @endisset">
+                        <a class="nav-link" href="#">
+                            <img src="/console_logo/ps4.png" class="img-fluid" alt="Responsive image" width="80">
+                        </a>
+                    </li>
+                    <li class="nav-item @isset($nav_xbox) {{ $nav_xbox }} @endisset">
+                        <a class="nav-link" href="#">
+                            <img src="/console_logo/xboxone.png" class="img-fluid" alt="Responsive image" width="90">
+                        </a>
+                    </li>
+                    <li class="nav-item @isset($nav_pc) {{ $nav_pc }} @endisset">
+                        <a class="nav-link" href="#">
+                            <img src="/console_logo/pc.png" class="img-fluid" alt="Responsive image" width="20">
+                        </a>
+                    </li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                </form>
+            </div>
+        </nav>
+
+        <!-- END Navbar -->
+
         <div class="container-fluid">
             <div class="row">
-                <div class="col" style="background-color: red">
-                One of three columns
-                </div>
-                <div class="col-md-8" style="background-color: green">
+                <div class="col" style="background-color: darkkhaki">
                         <main class="py-4">
-                            @yield('content')
+                            @yield('left', 'Left Panel')
                         </main>
                 </div>
-                <div class="col" style="background-color: blue">
-                One of three columns
+                <div class="col-md-8">
+                        <main class="py-4">
+                            @yield('center', 'Center Panel')
+                        </main>
+                </div>
+                <div class="col" style="background-color: coral">
+                        <main class="py-4">
+                            @yield('right', 'Right Panel')
+                        </main>
                 </div>
             </div>
         </div>
