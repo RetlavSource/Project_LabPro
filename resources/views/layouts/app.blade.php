@@ -97,6 +97,12 @@
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
 
+                        <li class="nav-item links">
+                            <a class="nav-link" href="#" style="color:#DD9C2A;">0
+                                <img src="/logo/cart.png" class="img-fluid" alt="Responsive image" width="20">
+                            </a>
+                        </li>
+
                         @guest
                             <li class="nav-item links">
                                 <a class="nav-link" href="{{ route('login') }}" style="color:#DD9C2A;">{{ __('Login') }}</a>
@@ -246,5 +252,12 @@
     
     
     </div>
+
+    {{-- FOOTER --}}
+
+    <footer style="background-color: #F7D358">
+        <p>Some footer about the administrators!!</p>
+    </footer>
+
 </body>
 </html>
