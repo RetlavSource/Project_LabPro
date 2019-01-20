@@ -17,7 +17,7 @@ class CreateUsersTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('lastname');
-            $table->year('birth_year');
+            $table->date('birthday');
             $table->string('address');
             $table->unsignedInteger('mobile');
             $table->boolean('is_admin')->default(false);

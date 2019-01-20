@@ -1,10 +1,50 @@
-<!doctype html>
 
 
  {{-- Identificação dos autores:
  Valter Cardoso   - nº31062
  Gustavo Teixeira - nº21736 --}}
  
+ @extends('layouts.app')
+
+ @section('content')
+ 
+<div style="background-color: #FFFFCD;
+            color: #636b6f;
+            font-family: 'Nunito', sans-serif;
+            font-weight: 200;
+            height: 100vh;
+            margin: 0;">
+
+    <div style="align-items: center;
+                display: flex;
+                justify-content: center;
+
+                position: relative;
+
+                height: 100vh;">
+        <div style="text-align: center">
+            <div style="font-size: 84px; 
+                        margin-bottom: 30px">
+                Laravel
+            </div>
+
+            <div class="links">
+                <a href="https://laravel.com/docs">Documentation</a>
+                <a href="https://laracasts.com">Laracasts</a>
+                <a href="https://laravel-news.com">News</a>
+                <a href="https://nova.laravel.com">Nova</a>
+                <a href="https://forge.laravel.com">Forge</a>
+                <a href="https://github.com/laravel/laravel">GitHub</a>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+ @endsection
+
+{{--
+<!doctype html>
 
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
@@ -19,7 +59,7 @@
         <!-- Styles -->
         <style>
             html, body {
-                background-color: #fff;
+                background-color: #ffa;
                 color: #636b6f;
                 font-family: 'Nunito', sans-serif;
                 font-weight: 200;
@@ -103,3 +143,4 @@
         </div>
     </body>
 </html>
+--}}
