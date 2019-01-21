@@ -43,6 +43,7 @@ Route::get('/', function () {
 
 // GAMES
 Route::get('/games/create', 'GamesController@create');
+Route::post('/games', 'GamesController@store');
 
 // CONSOLES
 Route::get('/consoles/create', 'ConsolesController@create');
