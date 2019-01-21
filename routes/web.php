@@ -46,6 +46,7 @@ Route::get('/games/create', 'GamesController@create');
 
 // CONSOLES
 Route::get('/consoles/create', 'ConsolesController@create');
+Route::post('/consoles', 'ConsolesController@store');
 
 // REGISTER - AUTH
 Auth::routes();

@@ -10,6 +10,7 @@ namespace App\Http\Controllers;
 
 use App\Console;
 use Illuminate\Http\Request;
+// use \Illuminate\Http\UploadedFile;
 
 class ConsolesController extends Controller
 {
@@ -41,7 +42,22 @@ class ConsolesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $attributes = request()->validate([
+            'name' => ['required', 'min:3'],
+            'tag' => ['required', 'min:2']
+        ]);
+
+        // FETCHING the saved image
+        // src="{{ Storage::disk('personal')->url('icons/7J89muTyBvQGRQSD5OaFBEdQQmVwYJ4kBDxQsl9l.png') }}"
+        
+        $path = $request->file('icon')->store('console_icons'); // Upload the file and retrieve path
+        $full_path = "/uploads/".$path; // append full path to the retrieved path
+        
+        $attributes['icon_path'] = $full_path;
+        Console::create($attributes);
+
+        $response = 'New '.$attributes['name'].' Created'; // Creating the message for response
+        return back()->with('status', $response); // Returns a message flashed to the session
     }
 
     /**

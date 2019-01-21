@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'default' => env('FILESYSTEM_DRIVER', 'local'),
+    'default' => env('FILESYSTEM_DRIVER', 'personal'),
 
     /*
     |--------------------------------------------------------------------------
@@ -41,11 +41,22 @@ return [
     |
     */
 
+    /**
+     * If using 'local'
+     * the file is stored in /storage/app folder
+     * if you want to read the file, just use like $publicPath = '../storage/app/'.$path;
+     */
+
     'disks' => [
 
         'local' => [
             'driver' => 'local',
             'root' => storage_path('app'),
+        ],
+
+        'personal' => [
+            'driver' => 'local',
+            'root' => public_path() . '/uploads',
         ],
 
         'public' => [
