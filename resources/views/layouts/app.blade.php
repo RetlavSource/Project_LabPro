@@ -229,7 +229,7 @@
 
         <div class="container-fluid">
             <div class="row">
-                <div class="col" style="background-color: darkkhaki">
+                <div class="col" style="background-color: #F0F07A">
                         <main class="py-4">
                             @yield('left', 'Left Panel')
                         </main>
@@ -239,7 +239,7 @@
                             @yield('center', 'Center Panel')
                         </main>
                 </div>
-                <div class="col" style="background-color: coral">
+                <div class="col" style="background-color: #F0F07A">
                         <main class="py-4">
                             @yield('right', 'Right Panel')
                         </main>
