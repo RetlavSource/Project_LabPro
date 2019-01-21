@@ -14,4 +14,20 @@ class Rent extends Model
 {
     protected $guarded = [];
 
+    /**
+     * Eloquent relationship
+     */
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
+    /**
+     * Eloquent relationship
+     */
+    public function game()
+    {
+        return $this->belongsTo(Game::class);
+    }
+
 }

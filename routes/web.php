@@ -50,3 +50,4 @@ Route::get('/consoles/create', 'ConsolesController@create');
 // REGISTER - AUTH
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
+

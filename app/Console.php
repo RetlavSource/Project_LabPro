@@ -14,4 +14,12 @@ class Console extends Model
 {
     protected $guarded = [];
 
+    /**
+     * Eloquent relationship
+     */
+    public function games()
+    {
+        return $this->hasMany(Game::class);
+    }
+
 }

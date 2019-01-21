@@ -17,6 +17,14 @@ class User extends Authenticatable
     use Notifiable;
 
     /**
+     * Eloquent relationship
+     */
+    public function rents()
+    {
+        return $this->hasMany(Rent::class);
+    }
+
+    /**
      * The attributes that are mass assignable.
      *
      * @var array

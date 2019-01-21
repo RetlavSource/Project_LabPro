@@ -96,10 +96,11 @@
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
-
+                        
+                        {{-- Shopping Cart --}}
                         <li class="nav-item links">
                             <a class="nav-link" href="#" style="color:#DD9C2A;">0
-                                <img src="/logo/cart.png" class="img-fluid" alt="Responsive image" width="20">
+                                <img src="/logo/cart.png" class="img-fluid" alt="Responsive image" width="22">
                             </a>
                         </li>
 
@@ -151,21 +152,21 @@
             </ol>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img class="d-block w-100" src="/test_img/image1.png?auto=yes&bg=777&fg=555&text=First slide" alt="First slide">
+                    <img class="d-block w-100" src="/test_img/image1.jpg?auto=yes&bg=777&fg=555&text=First slide" alt="First slide">
                     <div class="carousel-caption d-none d-md-block">
                         <h1 style="text-shadow: 0px 0px 10px #000000"><strong>Resident Evil 2</strong></h1>
                         <p style="text-shadow: 0px 0px 10px #000000">New on the site!</p>
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img class="d-block w-100" src="/test_img/image2.png?auto=yes&bg=666&fg=444&text=Second slide" alt="Second slide">
+                    <img class="d-block w-100" src="/test_img/image2.jpg?auto=yes&bg=666&fg=444&text=Second slide" alt="Second slide">
                     <div class="carousel-caption d-none d-md-block">
                         <h1 style="text-shadow: 0px 0px 10px #000000"><strong>The Division 2</strong></h1>
                         <p style="text-shadow: 0px 0px 10px #000000">New on the site!</p>
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img class="d-block w-100" src="/test_img/image3.png?auto=yes&bg=555&fg=333&text=Third slide" alt="Third slide">
+                    <img class="d-block w-100" src="/test_img/image3.jpg?auto=yes&bg=555&fg=333&text=Third slide" alt="Third slide">
                     <div class="carousel-caption d-none d-md-block">
                         <h1 style="text-shadow: 0px 0px 10px #000000"><strong>Kenshi</strong></h1>
                         <p style="text-shadow: 0px 0px 10px #000000">New on the site!</p>
@@ -187,7 +188,7 @@
         <!-- START Navbar -->
 
         <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #F7D358">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="{{ url('/') }}">
                 <img src="/logo/icon2.png" class="img-fluid" alt="Responsive image" width="30">
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -217,8 +218,8 @@
                         </a>
                     </li>
                 </ul>
-                <form class="form-inline my-2 my-lg-0">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <form class="form-inline my-2 my-lg-0" method="GET" action="#">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="search">
                     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
                 </form>
             </div>
