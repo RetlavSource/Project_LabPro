@@ -50,7 +50,7 @@ class GamesController extends Controller
             'youtube_link' => ['string', 'min:2', 'nullable'],
             'store_link' => ['string', 'min:2', 'nullable'],
             'game_link' => ['string', 'min:2', 'nullable'],
-            'console_id' => ['console_id', 'integer'],
+            'console_id' => ['required', 'integer'],
         ]);
 
         if ($request->hasFile('icon_path')) {
@@ -96,6 +96,10 @@ class GamesController extends Controller
                 Screen::create($screen_attributes);
             }
         }
+
+        // $response = $attributes['name'].' Game Created'; // Creating the message for response
+        $response = $game->console->tag.' Game Created'; // Creating the message for response
+        return back()->with('status', $response); // Returns a message flashed to the session
     }
 
     /**
