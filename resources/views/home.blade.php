@@ -6,6 +6,26 @@
 
 @section('title', 'Home')
 
+@section('left')
+
+    @if ( auth()->user()->is_admin )
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item" style="background-color: #F0F07A"><a href="/games/create">Create Games</a></li>
+        <li class="list-group-item" style="background-color: #F0F07A"><a href="/consoles/create">Create Consoles</a></li>
+        <li class="list-group-item" style="background-color: #F0F07A"><a href="#">All Rents</a></li>
+        <li class="list-group-item" style="background-color: #F0F07A"><a href="#">Rents Incompleted</a></li>
+        <li class="list-group-item" style="background-color: #F0F07A"><a href="#">Admin Info</a></li>
+    </ul>
+    @else
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item" style="background-color: #F0F07A"><a href="#">Personal Info</a></li>
+        <li class="list-group-item" style="background-color: #F0F07A"><a href="#">View Shopping Cart</a></li>
+        <li class="list-group-item" style="background-color: #F0F07A"><a href="#">My Rents</a></li>
+    </ul>
+    @endif
+    
+@endsection
+
 @section('center')
 <div class="container">
     <div class="row justify-content-center">
