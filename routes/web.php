@@ -42,12 +42,18 @@ Route::get('/', function () {
 });
 
 // GAMES
-Route::get('/games/create', 'GamesController@create');
-Route::post('/games', 'GamesController@store');
+Route::get('/games/create', 'GamesController@create')->middleware('auth'); // view a create games template
+Route::post('/games', 'GamesController@store')->middleware('auth'); // store a geme from the games.create template
+Route::get('/games', 'GamesController@index'); // view all games        // no need athorization 
+Route::get('/games/{game}', 'GamesController@show'); // view a game     // no need athorization
+
+Route::get('/ps4', 'GamesController@ps4'); // view ps4 games     // no need athorization
+Route::get('/pc', 'GamesController@pc'); // view ps4 games     // no need athorization
+Route::get('/xbox', 'GamesController@xbox'); // view ps4 games     // no need athorization
 
 // CONSOLES
-Route::get('/consoles/create', 'ConsolesController@create');
-Route::post('/consoles', 'ConsolesController@store');
+Route::get('/consoles/create', 'ConsolesController@create')->middleware('auth');
+Route::post('/consoles', 'ConsolesController@store')->middleware('auth');
 
 // REGISTER - AUTH
 Auth::routes();

@@ -31,6 +31,10 @@ class ConsolesController extends Controller
      */
     public function create()
     {
+        if( !auth()->user()->is_admin )
+        {
+            abort(403);
+        }
         return view('consoles.create');
     }
 
@@ -42,6 +46,10 @@ class ConsolesController extends Controller
      */
     public function store(Request $request)
     {
+        if( !auth()->user()->is_admin )
+        {
+            abort(403);
+        }
         $attributes = request()->validate([
             'name' => ['required', 'min:3'],
             'tag' => ['required', 'min:2']

@@ -10,6 +10,7 @@ namespace App\Http\Controllers;
 
 use App\Game;
 use App\Screen;
+use App\Console;
 use Illuminate\Http\Request;
 
 class GamesController extends Controller
@@ -21,7 +22,8 @@ class GamesController extends Controller
      */
     public function index()
     {
-        //
+        $games = Game::all();
+        return view('games.index', compact('games'));
     }
 
     /**
@@ -31,6 +33,10 @@ class GamesController extends Controller
      */
     public function create()
     {
+        if( !auth()->user()->is_admin )
+        {
+            abort(403);
+        }
         return view('games.create');
     }
 
@@ -42,6 +48,10 @@ class GamesController extends Controller
      */
     public function store(Request $request)
     {
+        if( !auth()->user()->is_admin )
+        {
+            abort(403);
+        }
         $attributes = request()->validate([
             'name' => ['required', 'string', 'max:255', 'min:2'],
             'description' => ['required', 'string', 'min:2'],
@@ -110,7 +120,7 @@ class GamesController extends Controller
      */
     public function show(Game $game)
     {
-        //
+        dd($game);
     }
 
     /**
@@ -145,5 +155,51 @@ class GamesController extends Controller
     public function destroy(Game $game)
     {
         //
+    }
+
+    /**
+     * Display PS4 games.
+     */
+    public function ps4()
+    {
+        $id = $this->find_console_id('PS4');
+        $games = Game::where('console_id', $id)->get();
+        return view('games.index', compact('games'));
+    }
+
+    /**
+     * Display PC games.
+     */
+    public function pc()
+    {
+        $id = $this->find_console_id('PC');
+        $games = Game::where('console_id', $id)->get();
+        return view('games.index', compact('games'));
+    }
+
+    /**
+     * Display XBOX ONE games.
+     */
+    public function xbox()
+    {
+        $id = $this->find_console_id('Xbox One');
+        $games = Game::where('console_id', $id)->get();
+        return view('games.index', compact('games'));
+    }
+
+    /**
+     * Finds a console id.
+     * *@param  $tag Console TAG
+     * @return $id_console ID of the console
+     */
+    public function find_console_id($tag)
+    {
+        $consoles = Console::all();
+        foreach ($consoles as $console) {
+            if ($console->tag == $tag) {
+                $id_console = $console->id;
+                return $id_console;
+            }
+        }
     }
 }

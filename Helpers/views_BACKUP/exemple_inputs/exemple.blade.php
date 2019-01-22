@@ -145,3 +145,21 @@
     </div>
 </div>
 
+
+{{-- VIEW EACH Game in games.index --}}
+<div class="card mb-2">
+        <div class="row">
+            <div class="col-sm-4 align-self-center">
+                <a href="#"><img src="/test_img/icon1.jpg" alt="Responsive image"></a>
+            </div>
+            <div class="col-sm-8">
+                    <div class="card-body">
+                        <img src="/console_logo/ps4.png" alt="Responsive image" width="80">
+                        <h4 class="font-weight-bold" style="padding-top:20px">Resident Evil 2</h4>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted"><spam class="font-weight-bold">Rent:</spam> only €1/Day &emsp;&emsp;&emsp;<spam class="font-weight-bold">Games Available:</spam> 2</small>
+                    </div>
+            </div>
+        </div>
+</div>

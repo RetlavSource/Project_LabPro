@@ -198,22 +198,22 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item @isset($nav_all) {{ $nav_all }} @endisset">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link" href="/games">
                             <img src="/console_logo/all.png" class="img-fluid" alt="Responsive image" width="80">
                         <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item @isset($nav_ps4) {{ $nav_ps4 }} @endisset">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link" href="/ps4">
                             <img src="/console_logo/ps4.png" class="img-fluid" alt="Responsive image" width="80">
                         </a>
                     </li>
                     <li class="nav-item @isset($nav_xbox) {{ $nav_xbox }} @endisset">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link" href="/xbox">
                             <img src="/console_logo/xboxone.png" class="img-fluid" alt="Responsive image" width="90">
                         </a>
                     </li>
                     <li class="nav-item @isset($nav_pc) {{ $nav_pc }} @endisset">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link" href="/pc">
                             <img src="/console_logo/pc.png" class="img-fluid" alt="Responsive image" width="20">
                         </a>
                     </li>
